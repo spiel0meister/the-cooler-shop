@@ -1,8 +1,73 @@
-nav {
-    margin-bottom: 2rem;
+// Variables for consistent styling
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+$background-color: #f4f4f4;
+$text-color: #333;
+$white: #ffffff;
 
-    h1 {
-        display: inline;
+// Mixins for reusable styles
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button-base {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+// Global reset and base styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: $background-color;
+    color: $text-color;
+    line-height: 1.6;
+}
+
+// Header Styles
+nav {
+    background-color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    gap: 15px;
+
+    .btn {
+        @include button-base;
+
+        #signup {
+            background-color: $secondary-color;
+            color: $white;
+
+            &:hover {
+                background-color: darken($secondary-color, 10%);
+            }
+        }
+
+        #login {
+            background-color: transparent;
+            border: 2px solid $secondary-color;
+            color: $secondary-color;
+
+            &:hover {
+                background-color: $secondary-color;
+                color: $white;
+            }
+        }
     }
 }
 
@@ -11,22 +76,72 @@ nav {
     grid-template-columns: 33.3% auto;
 }
 
+// Main Content Grid Styles
 #items {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 30px 50px;
 
     .item {
-        display: inline-block;
-        width: fit-content;
+        background-color: $white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .details {
+            padding: 15px;
+
+            h3 {
+                margin-bottom: 10px;
+            }
+
+            .price {
+                font-weight: bold;
+                color: $secondary-color;
+            }
+        }
     }
 }
 
-#nav-empty {
-    display: inline-block;
-    width: 82.5%;
+// Footer Styles
+footer {
+    background-color: $primary-color;
+    color: $white;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+        display: flex;
+        gap: 20px;
+
+        color: $white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
+// Responsive Adjustments
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
 }
