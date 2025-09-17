@@ -46,26 +46,28 @@ nav {
     display: flex;
     gap: 15px;
 
-    .btn {
-        @include button-base;
+    #actions {
+        button {
+            @include button-base;
 
-        #signup {
-            background-color: $secondary-color;
-            color: $white;
-
-            &:hover {
-                background-color: darken($secondary-color, 10%);
-            }
-        }
-
-        #login {
-            background-color: transparent;
-            border: 2px solid $secondary-color;
-            color: $secondary-color;
-
-            &:hover {
+            #signup {
                 background-color: $secondary-color;
                 color: $white;
+
+                &:hover {
+                    background-color: darken($secondary-color, 10%);
+                }
+            }
+
+            #login {
+                background-color: transparent;
+                border: 2px solid $secondary-color;
+                color: $secondary-color;
+
+                &:hover {
+                    background-color: $secondary-color;
+                    color: $white;
+                }
             }
         }
     }
@@ -73,7 +75,7 @@ nav {
 
 #body {
     display: grid;
-    grid-template-columns: 33.3% auto;
+    grid-template-columns: 20% auto;
 }
 
 // Main Content Grid Styles
@@ -120,9 +122,10 @@ footer {
     background-color: $primary-color;
     color: $white;
     padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
 
     a {
         display: flex;
