@@ -113,6 +113,18 @@ nav {
                 font-weight: bold;
                 color: $secondary-color;
             }
+
+            .cart-button {
+                display: grid;
+                place-items: center;
+
+                margin-top: 1rem;
+
+                .cart-icon {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
         }
     }
 }
