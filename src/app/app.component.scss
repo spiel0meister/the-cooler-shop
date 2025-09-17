@@ -117,6 +117,10 @@ nav {
             }
 
             .cart-button {
+                @include button-base;
+                background-color: aquamarine;
+                color: black;
+
                 display: grid;
                 place-items: center;
 
