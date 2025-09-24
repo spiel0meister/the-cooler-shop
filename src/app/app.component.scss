@@ -1,11 +1,9 @@
-// Variables for consistent styling
 $primary-color: #2c3e50;
 $secondary-color: #3498db;
 $background-color: #f4f4f4;
 $text-color: #333;
 $white: #ffffff;
 
-// Mixins for reusable styles
 @mixin flex-center {
     display: flex;
     justify-content: center;
@@ -20,7 +18,6 @@ $white: #ffffff;
     transition: background-color 0.3s ease;
 }
 
-// Global reset and base styles
 * {
     margin: 0;
     padding: 0;
@@ -34,7 +31,6 @@ body {
     line-height: 1.6;
 }
 
-// Header Styles
 nav {
     background-color: $primary-color;
     color: $white;
@@ -76,14 +72,6 @@ nav {
     }
 }
 
-/*
-#body {
-    display: grid;
-    grid-template-columns: 20% auto;
-}
-*/
-
-// Main Content Grid Styles
 #items {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -147,7 +135,6 @@ nav {
     }
 }
 
-// Footer Styles
 footer {
     background-color: $primary-color;
     color: $white;
@@ -171,7 +158,6 @@ footer {
     }
 }
 
-// Responsive Adjustments
 @media screen and (max-width: 768px) {
     header {
         flex-direction: column;
