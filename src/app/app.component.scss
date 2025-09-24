@@ -36,7 +36,9 @@ body {
 
 // Header Styles
 nav {
-    background-color: $white;
+    background-color: $primary-color;
+    color: $white;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
