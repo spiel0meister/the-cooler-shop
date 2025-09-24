@@ -49,6 +49,7 @@ nav {
     #actions {
         button {
             @include button-base;
+            margin: 2px;
 
             #signup {
                 background-color: $secondary-color;
