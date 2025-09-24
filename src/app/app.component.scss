@@ -38,7 +38,7 @@ body {
 nav {
     background-color: $primary-color;
     color: $white;
-    
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -117,6 +117,15 @@ nav {
             .price {
                 font-weight: bold;
                 color: $secondary-color;
+            }
+
+            .rating {
+                font-size: 1.5rem;
+                .stars {
+                    color: red;
+                    margin-right: 0.5rem;
+                    font-size: 150%;
+                }
             }
 
             .cart-button {
