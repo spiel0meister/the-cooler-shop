@@ -53,7 +53,7 @@ nav {
             @include button-base;
             margin: 2px;
 
-            #signup {
+            &#signup {
                 background-color: $secondary-color;
                 color: $white;
 
@@ -62,7 +62,7 @@ nav {
                 }
             }
 
-            #login {
+            &#login {
                 background-color: transparent;
                 border: 2px solid $secondary-color;
                 color: $secondary-color;
