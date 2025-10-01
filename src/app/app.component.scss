@@ -119,6 +119,7 @@ nav {
             .cart-button {
                 @include button-base;
                 background-color: aquamarine;
+                outline: 2px solid aquamarine;
                 color: black;
 
                 display: grid;
@@ -132,10 +133,10 @@ nav {
                 }
 
                 &:hover {
-                    outline: 2px solid aquamarine;
                     background-color: $white;
+                    transform: scale(1.1);
 
-                    transition: background-color 0.1s ease;
+                    transition: all 0.25s;
                 }
             }
         }
