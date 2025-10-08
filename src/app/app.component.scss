@@ -1,76 +1,9 @@
-$primary-color: #2c3e50;
-$secondary-color: #3498db;
-$background-color: #f4f4f4;
-$text-color: #333;
-$white: #ffffff;
-
-@mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin button-base {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    user-select: none;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Comic Sans MS', sans-serif;
-}
+@import "../styles.scss";
 
 body {
     background-color: $background-color;
     color: $text-color;
     line-height: 1.6;
-}
-
-nav {
-    background-color: $primary-color;
-    color: $white;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-    display: flex;
-    gap: 15px;
-
-    #actions {
-        button {
-            @include button-base;
-            margin: 2px;
-
-            &#signup {
-                background-color: $secondary-color;
-                color: $white;
-
-                &:hover {
-                    background-color: darken($secondary-color, 10%);
-                }
-            }
-
-            &#login {
-                background-color: transparent;
-                border: 2px solid $secondary-color;
-                color: $secondary-color;
-
-                &:hover {
-                    background-color: $secondary-color;
-                    color: $white;
-                }
-            }
-        }
-    }
 }
 
 #items {

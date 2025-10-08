@@ -1,0 +1,40 @@
+@import "../../styles.scss";
+
+nav {
+    background-color: $primary-color;
+    color: $white;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    #actions {
+        button {
+            @include button-base;
+            margin: 2px;
+
+            &#signup {
+                background-color: $secondary-color;
+                color: $white;
+
+                &:hover {
+                    background-color: darken($secondary-color, 10%);
+                }
+            }
+
+            &#login {
+                background-color: transparent;
+                border: 2px solid $secondary-color;
+                color: $secondary-color;
+
+                &:hover {
+                    background-color: $secondary-color;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
