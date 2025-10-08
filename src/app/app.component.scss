@@ -1,16 +1,1 @@
 @import "../styles.scss";
-
-body {
-    background-color: $background-color;
-    color: $text-color;
-    line-height: 1.6;
-}
-
-
-
-@media screen and (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 15px;
-    }
-}
