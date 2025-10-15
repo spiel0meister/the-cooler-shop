@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { NavbarButtonsComponent } from "./navbar-buttons/navbar-buttons.component";
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [NavbarButtonsComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
