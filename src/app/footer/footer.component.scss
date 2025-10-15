@@ -8,17 +8,4 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     place-items: center;
-
-    a {
-        display: flex;
-        gap: 20px;
-
-        color: $white;
-        text-decoration: none;
-        transition: color 0.3s ease;
-
-        &:hover {
-            color: $secondary-color;
-        }
-    }
 }

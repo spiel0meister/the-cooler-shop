@@ -1,0 +1,16 @@
+@import "../../../styles.scss";
+
+.footer-links {
+    a {
+        display: flex;
+        gap: 20px;
+
+        color: $white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+}

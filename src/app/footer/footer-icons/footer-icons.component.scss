@@ -1,0 +1,17 @@
+.footer-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    img {
+        color: red;
+        width: 32px;
+        height: 32px;
+    }
+
+    a {
+        &:visited {
+            color: inherit;
+        }
+    }
+}
