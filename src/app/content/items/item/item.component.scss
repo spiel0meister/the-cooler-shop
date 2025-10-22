@@ -21,7 +21,11 @@
         padding: 15px;
 
         h3 {
+            font-size: 1.5rem;
+
             margin-bottom: 10px;
+            height: 69px;
+            overflow: auto;
         }
 
         .price {
@@ -35,27 +39,32 @@
             margin-right: 0.5rem;
         }
 
-        .cart-button {
-            @include button-base;
-            background-color: aquamarine;
-            outline: 2px solid aquamarine;
-            color: black;
+        #cart-container {
+            display: flex;
+            flex-direction: column-reverse;
 
-            display: grid;
-            place-items: center;
+            .cart-button {
+                @include button-base;
+                background-color: aquamarine;
+                outline: 2px solid aquamarine;
+                color: black;
 
-            margin-top: 1rem;
+                display: grid;
+                place-items: center;
 
-            .cart-icon {
-                width: 32px;
-                height: 32px;
-            }
+                margin-top: 1rem;
 
-            &:hover {
-                background-color: $white;
-                transform: scale(1.1);
+                .cart-icon {
+                    width: 32px;
+                    height: 32px;
+                }
 
-                transition: all 0.25s;
+                &:hover {
+                    background-color: $white;
+                    transform: scale(1.1);
+
+                    transition: all 0.25s;
+                }
             }
         }
     }
