@@ -3,11 +3,12 @@
     flex-direction: row;
     gap: 1rem;
 
-    img {
-        color: red;
-        width: 32px;
-        height: 32px;
-        filter: invert(1);
+    i {
+        transition: 0.2s filter;
+
+        &:hover {
+            filter: brightness(0.8);
+        }
     }
 
     a {
