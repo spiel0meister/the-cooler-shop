@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ItemComponent } from './item/item.component';
+import { items } from "./items";
 
 @Component({
   selector: 'app-items',
@@ -9,5 +10,5 @@ import { ItemComponent } from './item/item.component';
   styleUrl: './items.component.scss'
 })
 export class ItemsComponent {
-
+    items = items;
 }
