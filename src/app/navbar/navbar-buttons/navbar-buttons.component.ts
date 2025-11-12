@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Button } from '../../models/button.model';
 
 @Component({
   selector: 'app-navbar-buttons',
@@ -8,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrl: './navbar-buttons.component.scss'
 })
 export class NavbarButtonsComponent {
-
+  login: Button = {
+    label: "Log in",
+    faIcon: "fa-solid fa-user",
+  };
+  signup: Button = {
+    label: "Sign up",
+    faIcon: "fa-solid fa-user",
+  };
 }
