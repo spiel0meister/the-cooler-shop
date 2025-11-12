@@ -15,7 +15,7 @@ export const PLACEHOLDER: Image = {
 export const items: Item[] =  [
     { name: "Wireless Noise-Canceling Headphones", priceString: "249.99", rating: "★★★★⯪", image: PLACEHOLDER },
     { name: "Smart Fitness Tracker", priceString: "129.50", rating: "★★★★☆", image: PLACEHOLDER },
-    { name: "Protable Espresso Machine", priceString: "89.99", rating: "★★★★⯪", image: PLACEHOLDER },
+    { name: "Portable Espresso Machine", priceString: "89.99", rating: "★★★★⯪", image: PLACEHOLDER },
     { name: "Bluetooth Speaker", priceString: "79.75", rating: "★★★⯪☆", image: PLACEHOLDER },
     { name: "Ergonomic Desk Chair", priceString: "299.00", rating: "★★★★☆", image: PLACEHOLDER },
     { name: "Wireless Charging Pad", priceString: "45.50", rating: "★★★★☆", image: PLACEHOLDER },
