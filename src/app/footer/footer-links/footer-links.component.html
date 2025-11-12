@@ -1,4 +1,5 @@
 <div class="footer-links">
-    <a href="#">Contact</a>
-    <a href="#">Terms Of Use</a>
+    @for (link of links; track link.content) {
+        <a href="{{ link.uri }}">{{link.content}}</a>
+    }
 </div>

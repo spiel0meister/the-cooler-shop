@@ -1,3 +1,4 @@
-export class Link {
-    
+export interface Link {
+    content: string;
+    uri: string;
 }

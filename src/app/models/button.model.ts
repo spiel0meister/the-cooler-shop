@@ -1,3 +1,4 @@
-export class Button {
-    
+export interface Button {
+    label: string;
+    faIcon: string;
 }

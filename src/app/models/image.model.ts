@@ -1,3 +1,4 @@
-export class Image {
-
+export interface Image {
+    uri: string;
+    alt: string;
 }
