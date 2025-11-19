@@ -5,6 +5,10 @@
         @include button-base;
         margin: 2px;
 
+        label:hover {
+            cursor: pointer;
+        }
+
         &#signup {
             background-color: $secondary-color;
             color: $white;
