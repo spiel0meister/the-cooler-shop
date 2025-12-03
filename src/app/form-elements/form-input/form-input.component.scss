@@ -1,0 +1,23 @@
+@import "../../../styles.scss";
+
+div.form-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 8px;
+
+    input {
+        font-size: 1.5rem;
+
+        border: 2px solid black;
+        border-radius: 4px;
+
+        box-shadow: 4px 4px 24px $primary-color;
+    }
+
+    &:last-child {
+        margin-bottom: 1.5rem;
+    }
+}
