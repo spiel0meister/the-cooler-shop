@@ -12,9 +12,15 @@ export class NavbarButtonsComponent {
   login: Button = {
     label: "Log in",
     faIcon: "fa-solid fa-user",
+    onClick() {
+      window.location.href = "/login";
+    }
   };
   signup: Button = {
     label: "Sign up",
     faIcon: "fa-solid fa-user",
+    onClick() {
+      window.location.href = "/signup";
+    }
   };
 }
