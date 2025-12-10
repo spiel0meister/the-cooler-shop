@@ -1,16 +1,2 @@
 @import "../../../styles.scss";
 
-.btn-submit {
-  padding: 2px;
-
-  color: white;
-  background-color: $secondary-color;
-  box-shadow: 0px 2px 12px black;
-
-  border: none;
-
-  &:hover {
-    transition: filter 0.2s;
-    filter: brightness(1.2);
-  }
-}
