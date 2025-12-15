@@ -1,2 +1,8 @@
 @import "../../../styles.scss";
 
+div {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+}
