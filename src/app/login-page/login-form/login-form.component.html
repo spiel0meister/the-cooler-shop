@@ -1,9 +1,13 @@
 <div class="login-form">
-    <label for="email">Email: </label> <br>
-    <input id="email" name="email" type="text"> <br>
-
-    <label for="password">Password: </label> <br>
-    <input id="password" name="password" type="password"> <br>
-
+    <div class="field">
+      <label for="email">Email: </label>
+      <input id="email" name="email" type="text">
+      <i *ngIf="emailMissing">Please enter your email</i>
+    </div>
+    <div class="field">
+      <label for="password">Password: </label>
+      <input id="password" name="password" type="password">
+      <i *ngIf="passwordMissing">Please enter your password</i>
+    </div>
     <button class="btn-submit" (click)="submit()">Log in!</button>
 </div>
