@@ -1,6 +1,7 @@
 import { Component, Inject, inject } from '@angular/core';
 import { Button } from '../../models/button.model';
 import { ApiService } from '../../api.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-navbar-buttons',
@@ -10,7 +11,7 @@ import { ApiService } from '../../api.service';
   styleUrl: './navbar-buttons.component.scss'
 })
 export class NavbarButtonsComponent {
-  constructor(private api: ApiService) {}
+  @Inject(HttpClient) http: HttpClient = inject(HttpClient);
 
   login: Button = {
     label: "Log in",
@@ -32,7 +33,7 @@ export class NavbarButtonsComponent {
     label: "Log out",
     faIcon: "fa-solid fa-user",
     onClick: () => {
-      this.api.logout();
+      (new ApiService(this.http)).test();
     }
   };
 }

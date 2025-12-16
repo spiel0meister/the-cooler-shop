@@ -9,6 +9,10 @@ export class ApiService {
   private url: string = "http://localhost:6969";
   constructor(private http: HttpClient) {}
 
+  test() {
+    this.http.get(`${this.url}/api/test`).subscribe(console.log);
+  }
+
   login(email: string, password: string) {
     this.http.get(`${this.url}/api/login`, {
       responseType: "arraybuffer",
