@@ -1,6 +1,25 @@
-div {
+@import "../../../styles.scss";
+
+div.signup-form, div.field {
     display: flex;
     justify-items: center;
     align-items: center;
     flex-direction: column;
+
 }
+
+div.field {
+  margin-bottom: 1rem;
+
+  i {
+    color: white;
+    background-color: #FF5C5C;
+    border: 2px solid red;
+    border-radius: 24px;
+
+    margin: 4px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+

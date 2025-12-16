@@ -1,18 +1,29 @@
 <div class="signup-form">
-    <label for="name">Name: </label> <br>
-    <input id="name" name="name" nameHuman="Name" type="text"> <br>
-
-    <label for="surname">Surname: </label> <br>
-    <input id="surname" name="surname" type="text"> <br>
-
-    <label for="email">Email: </label> <br>
-    <input id="email" name="email" type="text"> <br>
-
-    <label for="password">Password: </label> <br>
-    <input id="password" name="password" type="password"> <br>
-
-    <label for="password-repeat">Password Repeat: </label> <br>
-    <input id="password-repeat" name="password-repeat" type="password"> <br>
-
+    <div class="field">
+      <label for="name">Name: </label>
+      <input id="name" name="name" nameHuman="Name" type="text">
+      <i *ngIf="nameMissing">Please enter your name</i>
+    </div>
+    <div class="field">
+      <label for="surname">Surname: </label>
+      <input id="surname" name="surname" type="text">
+      <i *ngIf="surnameMissing">Please enter your surname</i>
+    </div>
+    <div class="field">
+      <label for="email">Email: </label>
+      <input id="email" name="email" type="text">
+      <i *ngIf="emailMissing">Please enter your email</i>
+    </div>
+    <div class="field">
+      <label for="password">Password: </label>
+      <input id="password" name="password" type="password">
+      <i *ngIf="passwordMissing">Please enter your password</i>
+    </div>
+    <div class="field">
+      <label for="password-repeat">Password Repeat: </label>
+      <input id="password-repeat" name="password-repeat" type="password">
+      <i *ngIf="passwordRepeatMissing">Please repeat your password</i>
+      <i *ngIf="!passwordsMatch">Passwords must match</i>
+    </div>
     <button class="btn-submit" (click)="submit()">Sign up!</button>
 </div>

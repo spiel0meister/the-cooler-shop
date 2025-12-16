@@ -20,12 +20,27 @@ export class ApiService {
         `Backend returned code ${error.status}, body was: `, error.error);
     }
     // Return an observable with a user-facing error message.
-    return throwError(() => new Error('Something bad happened; please try again later.'));
+    return throwError(() => new Error(`Something bad happened; please try again later.`));
   }
 
   login(email: string, password: string) {
     this.http.get(`${this.url}/api/login`, {
       params: {
+        email,
+        password,
+      },
+    }).pipe(
+      catchError(this.handleError),
+    ).subscribe((v) => {
+        console.log(v);
+      });
+  }
+
+  signup(name: string, surname: string, email: string, password: string) {
+    this.http.get(`${this.url}/api/login`, {
+      params: {
+        name,
+        surname,
         email,
         password,
       },
