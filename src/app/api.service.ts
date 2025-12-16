@@ -17,7 +17,7 @@ export class ApiService {
         password,
       },
     }).subscribe((v) => {
-        console.log(v);
+        window.location.href = "/";
       });
   }
 
