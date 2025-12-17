@@ -1,5 +1,9 @@
 @import "../../../styles.scss";
 
+:not(h1) {
+  font-size: 20px;
+}
+
 div.login-form, div.field {
     display: flex;
     justify-items: center;
@@ -9,6 +13,11 @@ div.login-form, div.field {
 
 div.field {
   margin-bottom: 1rem;
+
+  input {
+    border: 2px solid black;
+    border-radius: 4px;
+  }
 
   i {
     color: white;
