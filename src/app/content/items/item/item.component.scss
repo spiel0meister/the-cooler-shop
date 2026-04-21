@@ -40,14 +40,16 @@
         }
 
         #cart-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+            width: 100%;
+
             .cart-button {
                 @include button-base;
                 background-color: aquamarine;
                 outline: 2px solid aquamarine;
                 color: black;
-
-                display: grid;
-                place-items: center;
 
                 margin-top: 1rem;
 
