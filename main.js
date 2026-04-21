@@ -15,6 +15,7 @@ function createWindow() {
             enableRemoteModule: false,
         }
     });
+    win.setMenu(null);
     win.loadURL('http://localhost:4200');
 }
 // App Lifecycle
