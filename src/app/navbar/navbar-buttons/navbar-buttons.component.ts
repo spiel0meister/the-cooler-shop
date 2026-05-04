@@ -13,27 +13,42 @@ import { HttpClient } from '@angular/common/http';
 export class NavbarButtonsComponent {
   @Inject(HttpClient) http: HttpClient = inject(HttpClient);
 
-  login: Button = {
-    label: "Log in",
-    faIcon: "fa-solid fa-user",
-    onClick() {
-      window.location.href = "/login";
-    }
-  };
+  public constructor(public apiService: ApiService) { }
+  private isLoggedIn = false;
 
-  signup: Button = {
-    label: "Sign up",
-    faIcon: "fa-solid fa-user",
-    onClick() {
-      window.location.href = "/signup";
-    }
-  };
+  ngOnInit() {
+    this.apiService.isLoggedIn.subscribe(loggedIn => {
+      this.isLoggedIn = loggedIn;
+    });
+  }
 
-  logout: Button = {
-    label: "Log out",
-    faIcon: "fa-solid fa-user",
-    onClick: () => {
-      (new ApiService(this.http)).test();
-    }
-  };
+  buttons: Button[] = [
+    {
+      label: "Log in",
+      id: "login",
+      faIcon: "fa-solid fa-user",
+      condition: () => !this.isLoggedIn,
+      onClick() {
+        window.location.href = "/login";
+      }
+    },
+    {
+      label: "Sign up",
+      id: "signup",
+      faIcon: "fa-solid fa-user",
+      condition: () => !this.isLoggedIn,
+      onClick() {
+        window.location.href = "/signup";
+      }
+    },
+    {
+      label: "Log out",
+      id: "logut",
+      faIcon: "fa-solid fa-user",
+      condition: () => this.isLoggedIn,
+      onClick: () => {
+        this.apiService.logout();
+      },
+    },
+  ];
 }

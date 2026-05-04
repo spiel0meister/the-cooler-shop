@@ -1,16 +1,34 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, tap, catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
   private url: string = "http://localhost:6969";
+
+  private currentUserSubject = new BehaviorSubject<any>(null);
+  public currentUser = this.currentUserSubject.asObservable();
+
+  private isLoggedInSubject = new BehaviorSubject<boolean>(false);
+  public isLoggedIn = this.isLoggedInSubject.asObservable();
+
   constructor(private http: HttpClient) {}
 
-  test() {
-    this.http.get(`${this.url}/api/test`).subscribe(console.log);
+  checkAuth() {
+    this.http.get<{ auth: boolean, userId: string }>(`${this.url}/api/auth-check`)
+      .subscribe({
+        next: (res) => {
+          if (res.auth) {
+            this.currentUserSubject.next({ userId: res.userId });
+            this.isLoggedInSubject.next(true);
+          } else {
+            this.currentUserSubject.next(null);
+            this.isLoggedInSubject.next(false);
+          }
+        },
+      });
   }
 
   login(email: string, password: string) {
@@ -21,8 +39,9 @@ export class ApiService {
         password,
       },
     }).subscribe((v) => {
-        window.location.href = "/";
-      });
+      this.checkAuth();
+      window.location.href = "/";
+    });
   }
 
   signup(name: string, surname: string, email: string, password: string) {
@@ -35,12 +54,14 @@ export class ApiService {
         password,
       },
     }).subscribe((_) => {
-        window.location.href = "/login";
-      });
+      window.location.href = "/login";
+    });
   }
 
   logout(): void {
     this.http.get(`${this.url}/api/logout`).subscribe(_ => {
+      this.currentUserSubject.next(null);
+      this.isLoggedInSubject.next(false);
       window.location.href = "/";
     });
   }
