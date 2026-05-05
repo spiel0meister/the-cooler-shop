@@ -1,11 +1,5 @@
 import { Image } from "../../models/image.model";
-
-interface Item {
-    name: string;
-    priceString: string;
-    rating: string;
-    image: Image;
-}
+import { Item } from "../../models/item.model";
 
 export const PLACEHOLDER: Image = {
     uri: "../../../../assets/Placeholder.png",
